@@ -4,6 +4,14 @@
   {registered, [sasl_syslog_sup]},
   {applications, [kernel, stdlib]},
   {mod, {sasl_syslog_app, []}},
+  {modules, [
+    sasl_syslog,
+    sasl_syslog_app,
+    sasl_syslog_gelf,
+    sasl_syslog_h,
+    sasl_syslog_rfc5424,
+    sasl_syslog_sup
+  ]},
   {env, [
     {enabled,      true},
     {facility,     daemon},
