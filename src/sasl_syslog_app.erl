@@ -31,7 +31,7 @@ start(_StartType, _StartArgs) ->
         _ ->
             ok
     end,
-    {ok, self()}.
+    sasl_syslog_sup:start_link().
 
 stop(_State) ->
     sasl_syslog_h:detach().
