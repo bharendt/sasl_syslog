@@ -167,7 +167,7 @@ process_pid(Pid) when is_pid(Pid) ->
 process_name(Name) when is_atom(Name) ->
     atom_to_list(Name);
 process_name(Pid) when is_pid(Pid) ->
-    case process_info(Pid, registered_name) of
+    case rpc:pinfo(Pid, registered_name) of
         []                        -> undefined;
         undefined                 -> undefined;
         {registered_name, Name}   -> atom_to_list(Name)
